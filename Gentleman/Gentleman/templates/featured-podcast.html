@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load social_share %}
+
+
+{% block content %}
+	<section id="one">
+        <div class="wrapper">
+            <div class="container-one">
+
+                <h1>{{ podcast.title|capfirst }}</h1>
+
+
+                <p id="posted"><i class="fas fa-clock"></i> {{ podcast.timestamp }}  by {{ podcast.posted_by|capfirst }}</p>
+                <div class="share-to">
+                    <a>{% post_to_facebook podcast.get_absolute_url %}</a>
+                    <a>{% post_to_twitter podcast.get_absolute_url %}</a>
+                    <a>{% post_to_whatsapp podcast.get_absolute_url %}</a>
+                    <a>{% post_to_telegram podcast.get_absolute_url %}</a>
+                    <a>{% post_to_gplus podcast.get_absolute_url %}</a>
+                    <a>{% post_to_facebook podcast.get_absolute_url %}</a>
+                </div>
+                <div class="content">
+                    {{ podcast.audio_div|safe }}
+                    {{ podcast.script|safe }}
+                    <p id="text-content">{{ podcast.text|capfirst }}
+                    </p>
+                </div>
+            </div>
+        </div>
+	</section>
+{% endblock %}
+

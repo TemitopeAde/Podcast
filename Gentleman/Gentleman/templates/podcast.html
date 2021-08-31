@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="banner">
+        <div class="banner-wrapper">
+            <div class="craiq">
+                
+                <img src="{% static 'img/topeAsset 6.png' %}" alt="Craiq">
+                <p>CRAIG GENTEMAN</p>
+            </div>
+    
+            <div class="mack">
+                <p>"Telling America what it needs to hear, <br>not what it wants to hear"</p>
+                <div class="sound">
+                    <a href="#"><img src="{% static 'img/google-play.png' %}" alt="google" id="google"></a>
+                    <a href="#"><img src="{% static 'img/iHeart-Radio.png' %}" alt="iheart" id="iheart"></a>
+                    <a href="#"><img src="{% static 'img/rss.png' %}" alt="rss" id="rss"></a>
+                    <a href="#"><img src="{% static 'img/SoundClound.png' %}" alt="soundcloud" id="soundcloud"></a>
+                    <a href="#"><img src="{% static 'img/apple-podcast.png' %}" alt="apple" id="apple"></a>
+                    <a href="#"><img src="{% static 'img/Sticher.png' %}" alt="sticher" id="sticher"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="two">
+        <h2>LATEST PODCAST</h2>
+        <div class="wrapper">
+            <div class="trending-container">
+                {% for post in podcast %}
+                <div class="trending-content">
+                    <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt="post-image" id="podcast-img"></a>
+                    <div class="text">
+                        <a href="{{ post.get_absolute_url }}"><h3>{{ post.title|capfirst }}</h3></a>
+                        <h4><i class="fas fa-clock"></i>  {{ post.timestamp|timesince }} ago</h4>
+                        <p>{{ post.text|capfirst|truncatewords:15 }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="controls">
+                {% if podcast.has_previous %}
+                    <a href="?page={{ podcast.previous_page_number }}"><i class="fas fa-chevron-circle-left"></i></a>
+                {% endif %}
+                {% if podcast.has_next %}
+                    <a href="?page={{ podcast.next_page_number }}"><i class="fas fa-chevron-circle-right"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section id="subscribe">
+        <div class="subscribe-container">
+            <h2>NEWSLETTER</h2>
+            <p>Subscribe to our newsletter for regular updates</p>
+            <div class="form">
+                <form enctype="multipart/form-data" method="post" action="/newsletter/test/subscribe/">
+                    {% csrf_token %}
+                    <input type="email" placeholder="Enter your email here" id="id_email_field" name="email_field" required="">
+                    <button type="submit" value="Subscribe" id="id_submit" name="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

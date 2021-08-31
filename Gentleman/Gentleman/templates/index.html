@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<section id="one">
+        <div class="wrapper">
+            <div class="container-one">
+                <h2>FEATURED PODCAST</h2>
+                {% for item in featured_podcast %}
+                <div class="content">
+                    <a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" alt="image" id="one-pics"></a>
+                    <div style="display: flex; align-items: center; justify-content: center">
+                        <div class="text">
+                            <a href="{{ item.get_absolute_url }}"><h3>{{ item.title|capfirst }}
+                            </h3></a>
+                            <h4>{{ item.posted_by|capfirst }} | {{ item.timestamp|timesince }} ago</h4>
+                            <p>{{ item.text|capfirst|truncatewords:20 }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="container-two">
+                <h2>FEATURED ARTICLES</h2>
+                {% for post in featured %}
+                <div class="content">
+                    <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt="featured-image" id="featured"></a>
+                    <div style="display: flex; align-items: center; justify-content: center">
+                        <div class="texts">
+                            <a href="{{ post.get_absolute_url }}"><h4>{{ post.title|capfirst }}
+                            </h4></a>
+                            <h5>{{ post.posted_by }} | {{ post.timestamp|timesince }} ago</h5>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+	</section>
+    
+    <section id="two">
+        <h2>TOP STORIES</h2>
+        <div class="wrapper">
+            <div class="trending-container">
+                {% for post in topstories %}
+                <div class="trending-content">
+                    <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt="post-image" id="top-story"></a>
+                    <div style="display: flex; align-items: center; justify-content: center">
+                        <div class="text">
+                            <a href="{{ post.get_absolute_url }}"><h3>{{ post.title|capfirst }}</h3></a>
+                            <h4>{{ post.posted_by|capfirst}} | {{ post.timestamp|timesince }} ago</h4>
+                            <p>{{ post.text|capfirst|truncatewords:15 }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="controls">
+                {% if topstories.has_previous %}
+                    <a href="?page={{ topstories.previous_page_number }}"><i class="fas fa-chevron-circle-left"></i></a>
+                {% endif %}
+                {% if topstories.has_next %}
+                    <a href="?page={{ topstories.next_page_number }}"><i class="fas fa-chevron-circle-right"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+
+    <section id="subscribe">
+        <div class="subscribe-container">
+            <h2>NEWSLETTER</h2>
+            <P>Subscribe to our newsletter for regular updates</P>
+            <div class="form">
+                <form enctype="multipart/form-data" method="post" action="/newsletter/test/subscribe/">
+                    {% csrf_token %}
+                    <input type="email" placeholder="Enter your email here" id="id_email_field" name="email_field" required="">
+                    <button type="submit" value="Subscribe" id="id_submit" name="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

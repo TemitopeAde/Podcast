@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load social_share %}
+
+
+{% block content %}
+	<section id="one">
+        <div class="wrapper">
+            <div class="container-one">
+                <h1>{{ post.title|capfirst }}</h1>
+                <p id="posted"><i class="fas fa-clock"></i> {{ post.timestamp|timesince }} ago</p>
+                <div class="share-to">
+                    <a>{% post_to_facebook post.get_absolute_url %}</a>
+                    <a>{% post_to_twitter post.get_absolute_url %}</a>
+                    <a>{% post_to_whatsapp post.get_absolute_url %}</a>
+                    <a>{% post_to_telegram post.get_absolute_url %}</a>
+                    <a>{% post_to_gplus post.get_absolute_url %}</a>
+                    <a>{% post_to_facebook post.get_absolute_url %}</a>
+                </div>
+                <div class="content">
+                    <img src="{{ post.image.url }}" alt="image" class="image">
+                    <p id="text-content">{{ post.text|capfirst }}
+                    </p>
+                </div>
+            </div>
+        </div>
+	</section>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/brands.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/regular.css' %}">
+    <link rel="stylesheet" href="{% static 'css/regular.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/solid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/solid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/query.css' %}">
+</head>
+<body>
+
+    <header>
+		<a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt="Site-logo"></a>
+		<ul class="navlist">
+			<li><a href="{% url 'podcast' %}">PODCAST</a></li>
+            <li><a href="{% url 'topstories' %}">TOP STORIES</a></li>
+            <li><a href="#subscribe">NEWSLETTER</a></li>
+            <div class="header-icons">
+                <li><a href="https://www.deezer.com/show/1922102"><i class="fab fa-deezer"></i></a></li>
+                <li><a href="https://open.spotify.com/show/32fAf0z18QWwTE14k9xdTk"><i class="fab fa-spotify"></i></a></li>
+                <li><a href="https://www.instagram.com/gentlemanwithoutthel/"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCSdvHbNfPF_DZImQYHE-o_g?view_as=subscriber"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="http://linkedin.com/in/craiggenteman"><i class="fab fa-linkedin-in"></i></a></li>
+            </div>
+        </ul>
+        <div class="toggle-control">
+            <div class="times">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="bars">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+
+    <section id="footer-section">
+        <div class="footer-wrapper">
+            <div class="content">
+                <h5>Stay connected with us</h5>
+                <p>Connect with us and stay in the loop</p>
+                <div class="footer-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fas fa-cloud"></i></a>
+                </div>
+                <h6>Copyright <span>Gentleman Without The L</span></h6>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/all.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+    <script src="{% static 'js/brands.js' %}"></script>
+    <script src="{% static 'js/brands.min.js' %}"></script>
+    <script src="{% static 'js/fontawesome.js' %}"></script>
+    <script src="{% static 'js/fontawesome.min.js' %}"></script>
+    <script src="{% static 'js/regular.js' %}"></script>
+    <script src="{% static 'js/regular.min.js' %}"></script>
+    <script src="{% static 'js/solid.js' %}"></script>
+    <script src="{% static 'js/solid.min.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+@media only screen and (max-width: 1440px) {
+    .image {
+    height: 50vh;
+}
+}
+
+
+@media only screen and (max-width:1024px) {
+    #one {
+
+    padding: 20px 50px;
+    }
+
+    #one .container-one h2 {
+
+    font-size: 1.7rem;
+
+    }
+    #one .container-two h2 {
+
+    font-size: 1.3rem;
+
+    }
+
+    #top-story {
+    height: 340px;
+    width: 100%;
+    }
+    #banner p {
+    font-size: 1.2rem;
+}
+.banner-wrapper {
+    padding: 0 30px;
+    background: rgb(255, 254, 254);
+    font-size: 2rem;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(/static/img/header-background.jpg);
+}
+.banner-wrapper img {
+    width: 380px;
+}
+}
+
+
+@media only screen and (max-width:852px) {
+.banner-wrapper img {
+    width: 300px;
+}
+}
+
+
+
+
+@media only screen and (max-width:800px) {
+    header {
+
+        background-image: url("/static/img/header-background.jpg");
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+}
+ul {
+    display: flex;
+    column-gap: 0px;
+    flex-direction: column;
+}
+ul li a {
+    font-size: .9rem;
+    line-height: 40px
+}
+.header-icons {
+    display: none;
+}
+.toggle-control {
+    display: flex;
+    top: 40px;
+    right: 25px:
+    column-gap: 5px;
+}
+.times {
+    display: none;
+}
+
+.navlist {
+    display: none;
+}
+.banner-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding-bottom: 30px
+}
+#banner p {
+    font-size: 1.3rem
+}
+.image {
+    height: 30vh;
+}
+}
+
+
+
+@media only screen and (max-width:768px) {
+    #text-content {
+    padding-left: 1rem;
+    line-height: 1.3rem;
+    font-size: .9rem;
+}
+.container-one h1 {
+    font-size: 1.2rem
+}
+    #one .wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    row-gap: 50px
+}
+#one {
+    padding: 20px 30px;
+}
+
+    #two .wrapper .trending-container {
+    display: flex;
+    row-gap: 70px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#two .wrapper {
+    padding: 0 30px
+}
+#two h2 {
+    text-align: center;
+    font-size: 1.7rem;
+}
+#subscribe-email {
+    display: block;
+    width:100%;
+    margin-bottom: 20px;
+    padding: 1.0rem 2rem
+
+}
+#subscribe-submit {
+    display: block;
+    width:70%;
+    padding: .6rem 1.9rem;
+    margin-left: 60px
+}
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner-wrapper img {
+    width: 250px;
+}
+#google, #iheart, #rss, #soundcloud, #apple, #sticher {
+    width: 20px;
+}
+#banner p {
+    font-size: 1.0rem;
+}
+.mack .sound {
+    margin-top: 6px;
+
+}
+.craiq p {
+    display: flex;
+   align-items: center;
+    text-align: center;
+}
+.mack p {
+    text-align: center;
+   display: flex;
+   align-items: center;
+
+}
+#id_submit {
+    padding: .1rem 1.9rem;
+    display: block;
+    margin-top: 1.5rem;
+    font-size: .9rem;
+    padding: 4px 15px;
+
+}
+#subscribe h2, #subscribe p {
+    font-size: 1.2rem
+}
+#id_email_field {
+    font-size: .9rem;
+    display: inline-block;
+    width: 100%;
+    padding: 5px 14px;
+}
+#footer-section h5 {
+    font-size: 1.3rem;
+    padding: 1rem;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+}
+#two {
+    background-color: rgb(238, 247, 238);
+    padding: 15px;
+
+}
+#podcast-img {
+    height: 270px;
+    width: 100%;
+    transition: 1s;
+}
+}
+
+
+@media only screen and (max-width:760px) {
+
+}
+
+
+
+@media only screen and (max-width:600px) {
+    #one {
+        padding: 20px 30px;
+    }
+    #two .wrapper {
+    padding: 0 40px
+}
+#one-pics {
+    height: 370px;
+
+}
+#google, #iheart, #rss, #soundcloud, #apple, #sticher {
+    width: 15px;
+}
+.banner-wrapper img {
+    width:280px;
+    padding-left: 0px;
+}
+#banner p {
+    font-size: 1.2rem;
+}
+
+.mack .sound {
+    margin-top: 1rem;
+    column-gap: 1rem;
+    justify-content: center;
+    text-align: center
+}
+#two h2 {
+    font-size: 1.65rem;
+}
+.mack .sound {
+
+
+}
+}
+
+
+@media only screen and (max-width:540px) {
+.banner-wrapper {
+    row-gap: 0px;
+    padding-bottom: 2px;
+}
+#banner p {
+    font-size: .9rem;
+}
+#subscribe h2, #subscribe p {
+    font-size: 1.25rem
+}
+
+}
+
+
+
+
+@media only screen and (max-width:425px) {
+    #two h2 {
+    margin-left: 0rem;
+}
+
+    #one {
+        padding: 20px 25px;
+    }
+    #two .wrapper {
+    padding: 0 30px
+}
+#banner p {
+   padding-top: 3rem;
+}
+#podcast-img {
+    height: 250px;
+}
+.banner-wrapper img {
+    width: 200px;
+}
+#banner p {
+    font-size: .75rem;
+}
+#two .wrapper {
+    padding: 0 10px;
+}
+#subscribe h2, #subscribe p {
+    font-size: .85rem;
+
+}
+#footer-section h5 {
+    font-size: .9rem;
+}
+.footer-icons a {
+    font-size: .8rem;
+}
+.banner-wrapper {
+    row-gap: 0px;
+    padding-bottom: 30px;
+}
+}
+
+
+
+@media only screen and (max-width:360px) {
+    .banner-wrapper img {
+    width: 120px;
+}
+#banner p {
+    padding-top: .6rem;
+}
+.craiq p {
+
+    margin-left: 0px;
+}
+
+}
